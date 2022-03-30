@@ -23,23 +23,23 @@
   become: true
   tasks:
 
-  - name: create simone user
+  - name: create joshua user
     tags: always
     user:
-      name: simone
+      name: joshua
       groups: root
 
-  - name: add ssh key for simone
+  - name: add ssh key for joshua
     tags: always
     authorized_key:
-      user: simone
-      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDFKXMIafzQFacLs0RyQoeTvjFrtR4R2FIlOsvQXOfg ansible"
+      user: joshua
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEW6SaEVLYMeuuJMdH+4aqValtmbKQ3MbTW1m38v1y49 ansible"
 
-  - name: add sudoers file for simone
+  - name: add sudoers file for joshua
     tags: always
     copy:
-      src: sudoer_simone
-      dest: /etc/sudoers.d/simone
+      src: sudoer_joshua
+      dest: /etc/sudoers.d/joshua
       owner: root
       group: root
       mode: 0440
